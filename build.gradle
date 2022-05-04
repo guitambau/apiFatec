@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'sanjavaley'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-csv
+	implementation 'org.apache.commons:commons-csv:1.8'
+
+
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'	
+	testCompileOnly 'org.projectlombok:lombok:1.18.24'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+	
+	implementation("com.oracle.database.jdbc:ojdbc8:21.1.0.0")
+	implementation 'com.oracle.database.jdbc:ucp:21.5.0.0'
+	
+	
+	// https://mvnrepository.com/artifact/com.univocity/univocity-parsers
+implementation group: 'com.univocity', name: 'univocity-parsers', version: '2.1.1'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
