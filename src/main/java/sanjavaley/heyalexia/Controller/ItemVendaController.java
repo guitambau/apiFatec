@@ -24,17 +24,9 @@ public class ItemVendaController {
 	@GetMapping(value = "/top")
 	public ArrayList<Long> topFiveSell(){
 		
-		ArrayList<Long> lista1 = new ArrayList<>();
 		ArrayList<Long> lista = new ArrayList<>();
-		lista.addAll(service.topFive());
-		for (int i = 0; i < lista.size(); i++) {
-		      lista1.add(lista.get(i));
-		    }
-		return lista1;
-		
-		
-		
-		
+		lista.addAll(service.topFive());		
+		return lista;		
 		
 	}
 
